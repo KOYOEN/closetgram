@@ -1,5 +1,4 @@
 import { prisma } from "../../../../generated/prisma-client";
-import { ROOM_FRAGMENT } from "../../../fragments";
 
 export default {
     Mutation: {
@@ -14,16 +13,17 @@ export default {
                 if (user.id !== toId) {
                     room = await prisma.createRoom({
                         participants: { connect: [{ id: toId }, { id: user.id }] }
-                    }).$fragment(ROOM_FRAGMENT);
+                    });
                 }
             }//기존 대화방을 이용하는 경우
             else {
-                room = await prisma.room({ id: roomId }).$fragment(ROOM_FRAGMENT);
+                room = await prisma.room({ id: roomId });
             }
             if (!room) {
                 throw Error("Room not found");
             }
-            const getTo = room.participants.filter(
+            const participants = await prisma.room({ id: room.id }).participants();
+            const getTo = participants.filter(
                 participant => participant.id !== user.id
             )[0];
             //roomId가 있으면 기존의 것 이용, toId가 있으면 새로운 방을 생성하여 사용.
