@@ -1,3 +1,3 @@
-type Query{
-    searchPost(term:String!): [Post!]!
+type Query {
+  searchPost(term: String!, id: String): [Post!]!
 }

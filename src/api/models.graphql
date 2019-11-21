@@ -85,6 +85,7 @@ type Message {
 type Linktag {
   id: ID!
   post: Post!
+  caption: String!
   pointX: Float!
   pointY: Float!
   Link: String
