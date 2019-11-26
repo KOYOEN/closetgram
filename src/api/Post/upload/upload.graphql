@@ -7,5 +7,7 @@ type Mutation {
     pointXs: [Float!]
     pointYs: [Float!]
     links: [String!]
+    isSale: Boolean!
+    isOpen: Boolean!
   ): Post!
 }

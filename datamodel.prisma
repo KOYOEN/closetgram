@@ -26,6 +26,8 @@ type Post {
   likes: [Like!]! @relation(name: "LikeOfPost", onDelete: SET_NULL)
   comments: [Comment!] @relation(name: "CommentfPost", onDelete: SET_NULL)
   linktags: [Linktag!] @relation(name: "LinktagOfPost", onDelete: SET_NULL)
+  isSale: Boolean!
+  isOpen: Boolean!
   createdAt: DateTime! @createdAt
   updatedAt: DateTime! @updatedAt
 }

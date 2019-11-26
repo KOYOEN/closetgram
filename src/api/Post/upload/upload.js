@@ -12,8 +12,27 @@ export default {
         linkCaptions,
         pointXs,
         pointYs,
-        links
+        links,
+        isSale,
+        isOpen
       } = args;
+      const post = await prisma.createPost({
+        caption,
+        location,
+        user: { connect: { id: user.id } },
+        isOpen,
+        isSale
+      });
+      files.forEach(async file => {
+        await prisma.createFile({
+          url: file,
+          post: {
+            connect: {
+              id: post.id
+            }
+          }
+        });
+      });
       if (links != undefined) {
         links.forEach(async (index, link) => {
           await prisma.createLinktag({
@@ -29,21 +48,6 @@ export default {
           });
         });
       }
-      const post = await prisma.createPost({
-        caption,
-        location,
-        user: { connect: { id: user.id } }
-      });
-      files.forEach(async file => {
-        await prisma.createFile({
-          url: file,
-          post: {
-            connect: {
-              id: post.id
-            }
-          }
-        });
-      });
       return post;
     }
   }
