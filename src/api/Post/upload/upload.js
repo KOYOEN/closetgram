@@ -49,6 +49,7 @@ export default {
       //     });
       //   });
       // }
+      console.log(post);
       return post;
     }
   }
