@@ -88,7 +88,7 @@ type Linktag {
   caption: String!
   pointX: Float!
   pointY: Float!
-  Link: String
+  link: String
   createdAt: String
   updatedAt: String
 }

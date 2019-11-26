@@ -14,6 +14,21 @@ export default {
         pointYs,
         links
       } = args;
+      if (links != undefined) {
+        links.forEach(async (index, link) => {
+          await prisma.createLinktag({
+            post: {
+              connect: {
+                id: post.id
+              }
+            },
+            caption: linkCaptions[index],
+            pointX: pointXs[index],
+            pointY: pointYs[index],
+            link: link
+          });
+        });
+      }
       const post = await prisma.createPost({
         caption,
         location,
@@ -27,19 +42,6 @@ export default {
               id: post.id
             }
           }
-        });
-      });
-      links.forEach(async (index, link) => {
-        await prisma.createLinktag({
-          post: {
-            connect: {
-              id: post.id
-            }
-          },
-          caption: linkCaptions[index],
-          pointX: pointXs[index],
-          pointY: pointYs[index],
-          link: link
         });
       });
       return post;
