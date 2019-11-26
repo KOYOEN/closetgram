@@ -6,7 +6,7 @@ export const uploadMiddleware = upload.single("file");
 
 export const uploadController = (req, res) => {
   const {
-    picture: { path }
+    file: { path }
   } = req;
   res.json({ path });
 };
