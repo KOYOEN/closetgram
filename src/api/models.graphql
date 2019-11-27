@@ -15,7 +15,7 @@ type User {
   followersCount: Int!
   posts: [Post!]!
   postsCount: Int!
-  likes: [Like!]!
+  likes: [Like!]
   comments: [Comment!]!
   rooms: [Room!]!
   loginSecret: String!
@@ -29,8 +29,8 @@ type Post {
   caption: String!
   user: User!
   files: [File!]!
-  likes: [Like!]!
-  comments: [Comment!]!
+  likes: [Like!]
+  comments: [Comment!]
   linktags: [Linktag!]
   isLiked: Boolean!
   likeCount: Int!
