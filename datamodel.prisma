@@ -34,8 +34,8 @@ type Post {
 
 type Like {
   id: ID! @id
-  user: User @relation(name: "LikesOfUser")
-  post: Post @relation(name: "LikeOfPost")
+  user: User! @relation(name: "LikesOfUser")
+  post: Post! @relation(name: "LikeOfPost")
   createdAt: DateTime! @createdAt
   updatedAt: DateTime! @updatedAt
 }
