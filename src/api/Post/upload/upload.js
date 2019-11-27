@@ -33,22 +33,21 @@ export default {
           }
         });
       });
-      // if (links != undefined) {
-      //   links.forEach(async (index, link) => {
-      //     await prisma.createLinktag({
-      //       post: {
-      //         connect: {
-      //           id: post.id
-      //         }
-      //       },
-      //       caption: linkCaptions[index],
-      //       pointX: pointXs[index],
-      //       pointY: pointYs[index],
-      //       link
-      //     });
-      //   });
-      // }
-      console.log(post);
+      if (links != undefined) {
+        links.forEach(async (link, index) => {
+          await prisma.createLinktag({
+            post: {
+              connect: {
+                id: post.id
+              }
+            },
+            caption: linkCaptions[index],
+            pointX: pointXs[index],
+            pointY: pointYs[index],
+            link
+          });
+        });
+      }
       return post;
     }
   }

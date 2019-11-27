@@ -78,10 +78,10 @@ type Message {
 type Linktag {
   id: ID! @id
   post: Post! @relation(name: "LinktagOfPost")
-  caption: String!
-  pointX: Float!
-  pointY: Float!
+  caption: String
+  pointX: Float
+  pointY: Float
   link: String
-  createdAt: DateTime! @createAt
-  updatedAt: DateTime! @updateAt
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
 }
