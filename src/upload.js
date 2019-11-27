@@ -4,9 +4,9 @@ import aws from "aws-sdk";
 
 const s3 = new aws.S3({
   accessKeyId: process.env.S3_ACCESS_KEY_ID,
-  secretAccessKey: process.env.S3_SECRET_ACCESS_KEY,
-  region: "ap-northeast-2"
+  secretAccessKey: process.env.S3_SECRET_ACCESS_KEY
 });
+
 const upload = multer({
   storage: multerS3({
     s3,
@@ -25,7 +25,7 @@ export const uploadMiddleware = upload.single("file");
 
 export const uploadController = (req, res) => {
   const {
-    file: { location: path }
+    file: { location }
   } = req;
-  res.json({ path });
+  res.json({ location });
 };

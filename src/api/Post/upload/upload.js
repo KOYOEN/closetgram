@@ -33,7 +33,6 @@ export default {
           }
         });
       });
-      // console.log(links, linkCaptions, pointXs, pointYs);
       // if (links != undefined) {
       //   links.forEach(async (index, link) => {
       //     await prisma.createLinktag({
