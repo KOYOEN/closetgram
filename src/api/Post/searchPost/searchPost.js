@@ -4,10 +4,10 @@ export default {
   Query: {
     searchPost: async (_, args) => {
       //본인 것만 검색
-      if (args.me != undefined) {
-        prisma.posts({
+      if (args.username != undefined) {
+        return await prisma.posts({
           where: {
-            AND: [{ id: args.id }],
+            AND: [{ user: { username: args.username } }],
             OR: [
               { location_starts_with: args.term },
               { caption_starts_with: args.term }
@@ -17,7 +17,7 @@ export default {
       }
       //전체 검색
       else {
-        prisma.posts({
+        return await prisma.posts({
           where: {
             OR: [
               { location_starts_with: args.term },
