@@ -425,19 +425,15 @@
             "description": "",
             "args": [],
             "type": {
-              "kind": "NON_NULL",
+              "kind": "LIST",
               "name": null,
               "ofType": {
-                "kind": "LIST",
+                "kind": "NON_NULL",
                 "name": null,
                 "ofType": {
-                  "kind": "NON_NULL",
-                  "name": null,
-                  "ofType": {
-                    "kind": "OBJECT",
-                    "name": "Like",
-                    "ofType": null
-                  }
+                  "kind": "OBJECT",
+                  "name": "Like",
+                  "ofType": null
                 }
               }
             },
@@ -449,19 +445,15 @@
             "description": "",
             "args": [],
             "type": {
-              "kind": "NON_NULL",
+              "kind": "LIST",
               "name": null,
               "ofType": {
-                "kind": "LIST",
+                "kind": "NON_NULL",
                 "name": null,
                 "ofType": {
-                  "kind": "NON_NULL",
-                  "name": null,
-                  "ofType": {
-                    "kind": "OBJECT",
-                    "name": "Comment",
-                    "ofType": null
-                  }
+                  "kind": "OBJECT",
+                  "name": "Comment",
+                  "ofType": null
                 }
               }
             },
@@ -754,6 +746,18 @@
             "deprecationReason": null
           },
           {
+            "name": "caption",
+            "description": "",
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "following",
             "description": "",
             "args": [],
@@ -878,19 +882,15 @@
             "description": "",
             "args": [],
             "type": {
-              "kind": "NON_NULL",
+              "kind": "LIST",
               "name": null,
               "ofType": {
-                "kind": "LIST",
+                "kind": "NON_NULL",
                 "name": null,
                 "ofType": {
-                  "kind": "NON_NULL",
-                  "name": null,
-                  "ofType": {
-                    "kind": "OBJECT",
-                    "name": "Like",
-                    "ofType": null
-                  }
+                  "kind": "OBJECT",
+                  "name": "Like",
+                  "ofType": null
                 }
               }
             },
@@ -2143,6 +2143,16 @@
               },
               {
                 "name": "avatar",
+                "description": "",
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "caption",
                 "description": "",
                 "type": {
                   "kind": "SCALAR",
