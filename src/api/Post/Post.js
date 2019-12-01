@@ -6,6 +6,7 @@ export default {
     comments: ({ id }) => prisma.post({ id }).comments(),
     user: ({ id }) => prisma.post({ id }).user(),
     linktags: ({ id }) => prisma.post({ id }).linktags(),
+    likes: ({ id }) => prisma.post({ id }).likes(),
     isLiked: (parent, _, { request }) => {
       //요청자의 정보
       const { user } = request;
