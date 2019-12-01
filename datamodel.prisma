@@ -6,6 +6,7 @@ type User {
   firstName: String @default(value: "")
   lastName: String 
   bio: String
+  caption: String
   following: [User!]! @relation(name: "FollowRelation")
   followers: [User!]! @relation(name: "FollowRelation")
   posts: [Post!]! @relation(name:"PostsOfUser", onDelete:SET_NULL)
