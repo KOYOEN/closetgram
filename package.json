@@ -17,6 +17,7 @@
     "graphql-tools": "^4.0.5",
     "graphql-yoga": "^1.18.3",
     "jsonwebtoken": "^8.5.1",
+    "marked": "^0.7.0",
     "merge-graphql-schemas": "^1.7.0",
     "morgan": "^1.9.1",
     "multer": "^1.4.2",
@@ -30,7 +31,8 @@
   },
   "devDependencies": {
     "@babel/plugin-transform-runtime": "^7.6.2",
-    "nodemon": "^1.19.2"
+    "nodemon": "^1.19.2",
+    "lodash": "4.17.13"
   },
   "scripts": {
     "deploy": "prisma deploy",
